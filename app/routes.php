@@ -19,6 +19,17 @@ return function (App $app) {
         return $response;
     });
 
+    $app->post('/bmi', function (Request $request, Response $response) {
+        $contents = $request->getBody()->getContents();
+        $personalData = json_decode($contents, true);
+        $height = $personalData['height'] / 100;
+        $weight = $personalData['weight'];
+        $bmi = $weight / $height ** 2;
+        $responseData = array('bmi' => $bmi);
+        $response->getBody()->write(json_encode($responseData));
+        return $response->withHeader('Content-Type', 'application/json');
+    }) ;
+
     $app->group('/users', function (Group $group) {
         $group->get('', ListUsersAction::class);
         $group->get('/{id}', ViewUserAction::class);
