@@ -17,7 +17,8 @@ return function (App $app) {
     });
 
     $app->get('/', function (Request $request, Response $response) {
-        $response->getBody()->write('Hello world!');
+        $file = '../public/index.html';
+        $response->getBody()->write(file_get_contents($file));
         return $response;
     });
 
