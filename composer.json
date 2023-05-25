@@ -23,13 +23,14 @@
     ],
     "require": {
         "ext-json": "*",
-        "monolog/monolog": "^2.0",
-        "php": "^7.2",
-        "php-di/php-di": "^6.1",
-        "slim/psr7": "^1.1",
-        "slim/slim": "^4.5"
+        "monolog/monolog": "^3.3",
+        "php": "^8.2",
+        "php-di/php-di": "^7.0",
+        "slim/psr7": "^1.6",
+        "slim/slim": "^4.11"
     },
     "require-dev": {
+        "phpspec/prophecy": "^1.17",
         "phpunit/phpunit": "^8.5"
     },
     "config": {
